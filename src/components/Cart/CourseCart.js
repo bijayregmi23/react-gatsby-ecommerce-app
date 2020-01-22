@@ -34,7 +34,7 @@ export default class CourseCart extends Component {
                                             data-item-id={node.id}
                                             data-item-name={node.title}
                                             data-item-price={node.price}
-                                            data-item-url="https://learncodeonline.in"
+                                            data-item-url="https://bijayregmi.netlify.com/"
                                             data-item-image={node.image.fixed.src} 
                                             >
                                                 Join Now
