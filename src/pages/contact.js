@@ -5,27 +5,43 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroSection from "../components/Reuseable/HeroSection"
 import InfoBlock from "../components/Reuseable/InfoBlock"
-import DualInfoBlock from '../components/Reuseable/DualInfoBlock'
-import TeamPhotoSection from '../components/About/TeamPhotoSection'
+import Contact from '../components/Contact/Contact'
 
-const AboutPage = ({data}) => (
+
+const ContactPage = ({data}) => (
   <Layout>
     <SEO title="Home"/>
     <HeroSection
       img={data.img.childImageSharp.fluid}
-      title="About Learn Code Online"
+      title="Contact Us"
       subtitle=""
       heroClass="about-background"
     />
-    <DualInfoBlock heading="A Message From CEO" imageUrl="https://images.pexels.com/photos/1261427/pexels-photo-1261427.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"/>
-    <InfoBlock heading="Our Vison"/>
-    <TeamPhotoSection/>
+    <InfoBlock heading="How Can We Help"/>
+    <Contact/>
+    <div className="col-10 col-sm-8 mx-auto my-4">
+      <form action="https://formspree.io/mvokyroq" method="post">
+        <div className="form-group">
+          <input type="text" name="name" id="name" placeholder="Your Name" className="form-control"/>
+        </div>
+        <div className="form-group">
+          <input type="email" name="email" id="email" placeholder="Your Email" className="form-control"/>
+        </div>
+        <div className="form-group">
+          <input type="text" name="phone" id="Phone" placeholder="Phone" className="form-control"/>
+        </div>
+        <div className="form-group">
+          <textarea type="text" name="description" id="description" placeholder="Your Meassage" className="form-control"/>
+        </div>
+        <button type="submit" className="btn btn-outline-info btn-block">SUBMIT</button>
+      </form>
+    </div>
   </Layout>
 )
 
 export const myQuery = graphql`
 {
-  img: file(relativePath: {eq: "about.png"}) {
+  img: file(relativePath: {eq: "contact.png"}) {
     childImageSharp {
       fluid(maxWidth: 400, maxHeight: 250) {
         ...GatsbyImageSharpFluid_tracedSVG
@@ -35,4 +51,4 @@ export const myQuery = graphql`
 }
 `
 
-export default AboutPage
+export default ContactPage

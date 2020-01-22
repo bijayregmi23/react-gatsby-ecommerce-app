@@ -35,6 +35,7 @@ export const myQuery = graphql`
   mycourses: allContentfulCourses {
     edges {
       node {
+        category
         id
         title
         description {
